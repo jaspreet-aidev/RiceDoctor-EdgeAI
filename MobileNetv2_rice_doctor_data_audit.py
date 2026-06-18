@@ -174,6 +174,95 @@ base_dir = '/content/drive/MyDrive/Paddy_Doctor_Dataset/new-paddy-doctor-paddy-d
 print("Loading the official Paddy Doctor field data...")
 
 
+train_ds = tf.keras.utils.image_dataset_from_directory(
+    base_dir,
+    validation_split=0.2,
+    subset="training",
+    seed=123,
+    image_size=(224, 224),
+    batch_size=32,
+    label_mode='categorical'
+)
+
+class_names = train_ds.class_names
+print(f"\nDisease Classes Found: {class_names}")
+
+for images, labels in train_ds.take(1):
+    plt.figure(figsize=(12, 12))
+
+    for i in range(9):
+        ax = plt.subplot(3, 3, i + 1)
+        img = images[i].numpy().astype("uint8")
+        plt.imshow(img)
+
+        label_index = np.argmax(labels[i])
+        plt.title(f"Label: {class_names[label_index]}", fontsize=8)
+        plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+import os
+
+# Let's peek inside the downloaded Kaggle folder
+check_path = '/content/drive/MyDrive/Paddy_Doctor_Dataset/new-paddy-doctor-paddy-disease-classification'
+
+print("Here is what is actually inside that folder:")
+print(os.listdir(check_path))
+
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Updated path to click through the nested folder
+base_dir = '/content/drive/MyDrive/Paddy_Doctor_Dataset/new-paddy-doctor-paddy-disease-classification/paddy-disease-classification/train_images'
+
+print("Loading the official Paddy Doctor field data...")
+
+# Split 80% for training
+train_ds = tf.keras.utils.image_dataset_from_directory(
+    base_dir,
+    validation_split=0.2,
+    subset="training",
+    seed=123,
+    image_size=(224, 224),
+    batch_size=32,
+    label_mode='categorical'
+)
+
+# Split 20% for testing
+val_ds = tf.keras.utils.image_dataset_from_directory(
+    base_dir,
+    validation_split=0.2,
+    subset="validation",
+    seed=123,
+    image_size=(224, 224),
+    batch_size=32,
+    label_mode='categorical'
+)
+
+class_names = train_ds.class_names
+print(f"\nDisease Classes Found: {class_names}")
+
+# The Final Audit: Display 9 real images
+for images, labels in train_ds.take(1):
+    plt.figure(figsize=(12, 12))
+
+    for i in range(9):
+        ax = plt.subplot(3, 3, i + 1)
+        img = images[i].numpy().astype("uint8")
+        plt.imshow(img)
+
+        label_index = np.argmax(labels[i])
+        plt.title(f"Label: {class_names[label_index]}", fontsize=8)
+        plt.axis("off")
+
+    plt.tight_layout()
+    plt.show()
+
+
+
+
 
 
 
