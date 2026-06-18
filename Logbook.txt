@@ -17,3 +17,13 @@ Commit Executed: Add raw Python script for end-to-end MobileNetV2 training pipel
 The pipeline now accurately documents the transition from a noisy/corrupted dataset (47% initial accuracy) to the clean, real-world agricultural dataset resulting in the 76% accuracy baseline.
 🔜 NEXT STEPS FOR TOMORROW:
 Execute the identical "Direct Injection" protocol for the historical failure/audit files (MobileNetV2_v1_Baseline_47_Acc.py and MobileNetV2_v2_Data_Audit.py) to fully document the Data Science Root Cause Analysis.
+
+
+
+
+
+THRUSDAY 18 JuNE 
+
+i do train model n find some hamster n Christmas tree in data set n then i delete that data se t n then have to download new data set n check aguan get qrong n then agian change this 
+n final at laast get real world messy dataset that is really wantved
+n at last trained mobilev2net on dtataset n achieved 76.88% accuracy 
