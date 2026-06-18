@@ -145,3 +145,42 @@ for images, labels in train_ds.take(1):
     plt.show()
 
 
+
+
+
+import shutil
+import opendatasets as od
+import os
+
+# 1. Nuke the Hamster Dataset
+print("Deleting the hamster and the Christmas tree...")
+shutil.rmtree('/content/drive/MyDrive/Agritech_True_Field_Dataset', ignore_errors=True)
+
+# 2. Download the OFFICIAL Paddy Doctor Data
+paddy_doc_path = '/content/drive/MyDrive/Paddy_Doctor_Dataset'
+os.makedirs(paddy_doc_path, exist_ok=True)
+
+print("Connecting to Kaggle for the true Paddy Doctor dataset...")
+# This is a clean upload of the verified agricultural competition data
+od.download("https://www.kaggle.com/datasets/dasa7753912/new-paddy-doctor-paddy-disease-classification", data_dir=paddy_doc_path)
+
+import tensorflow as tf
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Point directly to the competition's training images
+base_dir = '/content/drive/MyDrive/Paddy_Doctor_Dataset/new-paddy-doctor-paddy-disease-classification/train_images'
+
+print("Loading the official Paddy Doctor field data...")
+
+
+
+
+
+
+
+
+
+
+
+
