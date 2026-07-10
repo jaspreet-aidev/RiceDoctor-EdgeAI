@@ -57,3 +57,30 @@ under out-of-distribution real-world field conditions (Haryana dirt-field matrix
 
 [STATUS] ACTIVE HYPERPARAMETER BUG HUNTING ENGAGED -- RUNNING SYSTEM UPDATES
 ================================================================================
+
+================================================================================
+UPDATE ID: #MOD-OVF-001-FIX (MEMORIZATION BYPASS)
+TIMESTAMP: 2026-07-10 22:30
+ARCHRESS: MobileNetV2 Crop Disease Hardened Training Pipeline
+--------------------------------------------------------------------------------
+[INTERVENTION EXECUTED]
+Successfully deployed system hardening protocols to combat the overfitting and 
+memorization loop identified in the baseline model. The neural network was 
+previously memorizing background laboratory static. 
+
+[ARCHITECTURAL UPGRADES]
+1. EXTREME AUGMENTATION: Rewrote the data loader to force the model to process 
+   images at extreme angles (40-degree rotations), variable zoom limits, and 
+   shifted brightness ranges [0.7, 1.3] to simulate harsh sunlight and shadows.
+2. NETWORK REGULARIZATION: Injected a GlobalAveragePooling2D layer to smash 
+   spatial dimensions, followed by a Dense layer constrained by an L2 Weight Decay 
+   penalty (0.01) to force broader feature distribution.
+3. PATHWAY DESTRUCTION: Implemented an aggressive 50% Dropout layer [Dropout(0.5)] 
+   to randomly disable neurons during training, preventing the model from relying 
+   on single-pixel shortcut pathways.
+4. AUTOMATED FAIL-SAFES: Attached EarlyStopping (patience=4) and ReduceLROnPlateau 
+   callbacks to autonomously govern the learning rate and prevent resource burn 
+   during the 15-epoch compute sprint.
+
+[STATUS] SYSTEM HARDENED. TRAINING LOOP ENGAGED. AWAITING TELEMETRY.
+================================================================================
