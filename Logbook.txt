@@ -131,7 +131,7 @@ evolution of our codebase.
 ==================================================
 LOGBOOK ENTRY: MODEL HARDENING & OVERFITTING MITIGATION
 ==================================================
-Date: [Insert Current Date]
+Date: 07-08-2026
 Project: Kisan Mitra (RiceDoctor-EdgeAI)
 Component: MobileNetV2 Training Pipeline (Google Colab T4 GPU)
 
@@ -152,3 +152,23 @@ To force generalization and stabilize the network's brain, we injected:
 - Validation Accuracy: Stabilized via optimal weights restoration from Epoch 8 (halting early at Epoch 13).
 - Verdict: Successfully eliminated uncontrolled overfitting divergence. The model now relies on robust, generalized feature extraction rather than pixel-level memorization, preparing the asset for final INT8 post-training integer quantization (~4MB .tflte).
 ==================================================
+
+
+
+====================================
+logbook entry --- gather dataset and add new hybrid dataset
+=================================
+
+Date= 13-08-2026
+
+Problem:
+1.Training data amount is low that training model is remaining hungry and model goes into starvation
+2.Rice_leaf_AUG datadet is 3000image dataset, It is real world dataset, but its low amount of data
+3.Lab dataset is 19k images, It is good amount ofdata ut it just very clean dataset
+
+Solution:
+we add zip of 21k Rice leaf Dataset  --Hybrid_dataset_19k_rice.zip--
+1.We mix up both dataset Real world+Lab dataset
+2.it is Good amount of data and with real data
+3.it will not strave Model
+
